@@ -1,0 +1,31 @@
+{
+    "provider": {
+        "name": "My Spring Boot Provider"
+    },
+    "consumer": {
+        "name": "My JAX-RS Consumer"
+    },
+    "interactions": [
+        {
+            "providerState": null,
+            "description": "a root request",
+            "request": {
+                "method": "GET",
+                "path": "/",
+                "body": null
+            },
+            "response": {
+                "status": 200,
+                "body": "Hello, world!"
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "2.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.2.6"
+        }
+    }
+}
