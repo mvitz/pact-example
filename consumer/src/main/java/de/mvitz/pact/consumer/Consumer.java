@@ -1,11 +1,9 @@
 package de.mvitz.pact.consumer;
 
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
-
+import javax.ws.rs.client.*;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
-public class Consumer {
+public final class Consumer {
 
     private final WebTarget target;
 
