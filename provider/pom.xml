@@ -35,7 +35,7 @@
     <dependency>
       <groupId>au.com.dius</groupId>
       <artifactId>pact-jvm-provider-junit_2.11</artifactId>
-      <version>3.2.6</version>
+      <version>3.5.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -71,7 +71,7 @@
       <plugin>
         <groupId>au.com.dius</groupId>
         <artifactId>pact-jvm-provider-maven_2.11</artifactId>
-        <version>3.2.6</version>
+        <version>3.5.4</version>
         <configuration>
           <serviceProviders>
             <serviceProvider>
@@ -104,6 +104,28 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray</id>
+      <name>bintray</name>
+      <url>https://jcenter.bintray.com</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray-plugins</id>
+      <name>bintray-plugins</name>
+      <url>https://jcenter.bintray.com</url>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>
 
