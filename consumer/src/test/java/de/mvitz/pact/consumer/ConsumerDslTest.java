@@ -4,13 +4,14 @@ import au.com.dius.pact.consumer.*;
 import au.com.dius.pact.model.*;
 import org.junit.Test;
 
+import static au.com.dius.pact.consumer.ConsumerPactRunnerKt.runConsumerTest;
 import static org.junit.Assert.assertEquals;
 
 public class ConsumerDslTest {
 
     @Test
     public void runTest() throws Exception {
-        PactFragment fragment = ConsumerPactBuilder
+        RequestResponsePact pact = ConsumerPactBuilder
                 .consumer("My JAX-RS Consumer")
                 .hasPactWith("My Spring Boot Provider")
                 .uponReceiving("a root request")
@@ -19,13 +20,15 @@ public class ConsumerDslTest {
                 .willRespondWith()
                     .status(200)
                     .body("Hello, world!")
-                .toFragment();
-        VerificationResult result = fragment.runConsumer(
-                MockProviderConfig.createDefault(),
-                (config) -> {
-                    final Consumer consumer = Consumer.of(config.url());
-                    assertEquals(consumer.run(), "Hello, world!");
-                });
-        assertEquals(ConsumerPactTest.PACT_VERIFIED, result);
+                .toPact();
+        PactVerificationResult result = runConsumerTest(
+            pact,
+            MockProviderConfig.createDefault(),
+            mockServer -> {
+                final Consumer consumer = Consumer.of(mockServer.getUrl());
+                assertEquals(consumer.run(), "Hello, world!");
+            }
+        );
+        assertEquals(PactVerificationResult.Ok.INSTANCE, result);
     }
 }
