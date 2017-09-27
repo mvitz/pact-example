@@ -13,6 +13,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <jersey.version>2.32</jersey.version>
+    <pact-jvm.version>3.5.24</pact-jvm.version>
   </properties>
 
   <dependencies>
@@ -30,7 +31,7 @@
     <dependency>
       <groupId>au.com.dius</groupId>
       <artifactId>pact-jvm-consumer-junit_2.11</artifactId>
-      <version>3.5.24</version>
+      <version>${pact-jvm.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -46,6 +47,29 @@
       <scope>runtime</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>au.com.dius</groupId>
+        <artifactId>pact-jvm-provider-maven_2.11</artifactId>
+        <version>${pact-jvm.version}</version>
+        <configuration>
+          <pactBrokerUrl>http://192.168.99.100</pactBrokerUrl>
+          <trimSnapshot>true</trimSnapshot>
+        </configuration>
+        <executions>
+          <execution>
+            <id>publish-contracts</id>
+            <phase>install</phase>
+            <goals>
+              <goal>publish</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
 

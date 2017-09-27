@@ -74,11 +74,11 @@
           <serviceProviders>
             <serviceProvider>
               <name>My Spring Boot Provider</name>
-              <pactFileDirectory>src/test/resources/pacts</pactFileDirectory>
+              <pactBrokerUrl>http://192.168.99.100/</pactBrokerUrl>
             </serviceProvider>
             <serviceProvider>
               <name>JsonProvider</name>
-              <pactFileDirectory>src/test/resources/pacts</pactFileDirectory>
+              <pactBrokerUrl>http://192.168.99.100/</pactBrokerUrl>
             </serviceProvider>
           </serviceProviders>
         </configuration>

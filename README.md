@@ -25,6 +25,19 @@ That way the Pact file would be integrated in the `provider` project. The provid
 assure that the tests pass.
 
 
+## Pact Broker
+
+This branch shows how to use the [Pact Broker](https://github.com/pact-foundation/pact_broker).
+Please follow the steps below before executing `mvn clean install`.
+
+```
+git clone https://github.com/DiUS/pact_broker-docker
+docker-machine create --virtualbox-memory "4096" --driver virtualbox pact
+eval $(docker-machine env pact)
+docker-compose -f pact_broker-docker/docker-compose.yml up -d
+```
+
+
 ## License
 
 The MIT License (MIT)

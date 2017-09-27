@@ -5,3 +5,6 @@ target/
 *.iml
 .idea/
 
+# Pact Broker
+pact_broker-docker/
+
