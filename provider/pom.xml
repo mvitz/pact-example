@@ -76,6 +76,10 @@
               <name>My Spring Boot Provider</name>
               <pactFileDirectory>src/test/resources/pacts</pactFileDirectory>
             </serviceProvider>
+            <serviceProvider>
+              <name>JsonProvider</name>
+              <pactFileDirectory>src/test/resources/pacts</pactFileDirectory>
+            </serviceProvider>
           </serviceProviders>
         </configuration>
         <executions>

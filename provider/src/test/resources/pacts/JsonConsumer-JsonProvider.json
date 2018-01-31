@@ -1,0 +1,70 @@
+{
+    "provider": {
+        "name": "JsonProvider"
+    },
+    "consumer": {
+        "name": "JsonConsumer"
+    },
+    "interactions": [
+        {
+            "description": "JSON request",
+            "request": {
+                "method": "POST",
+                "path": "/greet",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "name": "Michael"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    },
+                    "path": {
+                        
+                    },
+                    "header": {
+                        
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                "body": {
+                    "greeting": "Hello, Michael!"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.greeting": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.6"
+        }
+    }
+}
