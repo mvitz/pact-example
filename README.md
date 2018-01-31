@@ -10,6 +10,14 @@ Microservices-Architektur](http://www.sigs-datacom.de/fachzeitschriften/javaspek
 You can read it online [here](https://www.innoq.com/de/articles/2016/09/consumer-driven-contracts/)
 or download as PDF [here](http://www.sigs-datacom.de/uploads/tx_dmjournals/vitz_JS_04_16_TaTZ.pdf).
 
+## Run the Example
+
+* Run `mvn integration-test` in the `consumer` subdirectory.
+* Note that JSON Pact files were created in `consumer/target/PACTS`
+* Run `mvn integration-test` in the `provider` subdirecty.
+* Note that this test uses the JSON Pact files in `pact-example/provider/src/test/resources/pacts`.
+
+So to change the contract the consumer team would change the tests in `consumer/src/test`. This would result in different Pact files. The consumer team would provide them to the provider team. That way the Pact file would be integrated in the `provider` project. The provider team needs to assure that the tests pass.
 
 ## License
 
