@@ -3,12 +3,14 @@
 **[Pact](https://docs.pact.io) examples for the JVM using [Pact JVM](https://github.com/DiUS/pact-jvm)**
 
 These examples were written for my german
-[JavaSPEKTRUM](http://www.javaspektrum.de/) article [Der Praktiker: Pacta sunt servanda -
-Consumer-Driven Contracts – Testen von Schnittstellen innerhalb einer
-Microservices-Architektur](http://www.sigs-datacom.de/fachzeitschriften/javaspektrum/archiv/artikelansicht/artikel-titel/der-praktiker-pacta-sunt-servanda-consumer-driven-contracts-testen-von-schnittstellen-innerha.html).
+[JavaSPEKTRUM](http://www.javaspektrum.de/) article
+"Der Praktiker: Pacta sunt servanda - Consumer-Driven Contracts – Testen von Schnittstellen innerhalb einer Microservices-Architektur".
 
-You can read it online [here](https://www.innoq.com/de/articles/2016/09/consumer-driven-contracts/)
-or download as PDF [here](http://www.sigs-datacom.de/uploads/tx_dmjournals/vitz_JS_04_16_TaTZ.pdf).
+You can read it online
+[here](https://www.innoq.com/de/articles/2016/09/consumer-driven-contracts/)
+or download as PDF
+[here](http://www.sigs-datacom.de/uploads/tx_dmjournals/vitz_JS_04_16_TaTZ.pdf).
+
 
 ## Run the Example
 
@@ -17,7 +19,11 @@ or download as PDF [here](http://www.sigs-datacom.de/uploads/tx_dmjournals/vitz_
 * Run `mvn integration-test` in the `provider` subdirecty.
 * Note that this test uses the JSON Pact files in `pact-example/provider/src/test/resources/pacts`.
 
-So to change the contract the consumer team would change the tests in `consumer/src/test`. This would result in different Pact files. The consumer team would provide them to the provider team. That way the Pact file would be integrated in the `provider` project. The provider team needs to assure that the tests pass.
+So to change the contract the consumer team would change the tests in `consumer/src/test`. This
+would result in different Pact files. The consumer team would provide them to the provider team.
+That way the Pact file would be integrated in the `provider` project. The provider team needs to
+assure that the tests pass.
+
 
 ## License
 
